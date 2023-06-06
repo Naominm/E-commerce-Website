@@ -1,0 +1,14 @@
+body{
+    background-image:url("image/apple.jpeg");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    min-height: 1000%;
+    opacity: 0.8;
+}
+i{
+    height: 40px;
+    margin-top: 10px;
+}
+img{
+    border-radius: 100px;
+}
