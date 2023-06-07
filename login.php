@@ -1,4 +1,6 @@
 <?php
+session_start(); // Add session_start() at the beginning to start the session
+
 $dbhost = "localhost";
 $dbuser = "root";
 $dbpass = "";
@@ -6,8 +8,26 @@ $dbname = "tracking-web";
 
 // Create connection
 $con = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
+
 // Check connection
-if (isset($_POST['confirmPassword'])) {
+if (isset($_POST['loginButton'])) {
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+
+    $query = "SELECT * FROM signup WHERE email = '$email' AND password = '$password'";
+    $result = mysqli_query($con, $query);
+
+    if (mysqli_num_rows($result) == 1) {
+        $_SESSION['email'] = $email;
+        $_SESSION['loggedIn'] = true;
+        header("Location: page.html"); // Redirect to the page.html page
+        exit();
+    } else {
+        // Login failed, handle error or display a message
+    }
+}
+
+if (isset($_POST['signupButton'])) { // Update the condition to check if the signup form is submitted
     $userName = $_POST['userName'];
     $email = $_POST['email'];
     $password = $_POST['password'];
@@ -15,9 +35,14 @@ if (isset($_POST['confirmPassword'])) {
 
     $query = "INSERT INTO signup (userName, email, password, confirmPassword) VALUES ('$userName', '$email', '$password', '$confirmPassword');";
 
-    mysqli_query($con, $query);
+    if (mysqli_query($con, $query)) {
+        // Signup successful, handle success or display a message
+        header("Location: login.php"); // Redirect to login page after successful signup
+        exit();
+    } else {
+        // Signup failed, handle error or display a message
+    }
 }
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -90,7 +115,7 @@ if (isset($_POST['confirmPassword'])) {
                             </div>
                             <input type="password" name="password" class="form-control py-2" placeholder="Password" required>
                         </div>
-                        <button class="btn btn-success" name="loginButton">Login Now</button>
+                        <button type="submit" class="btn btn-success" name="loginButton">Login Now</button>
                         <p class="float-right text-white mt-3 py-2"><input type="checkbox">Remember me</p>
                     </form>
 
