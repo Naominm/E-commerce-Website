@@ -16,6 +16,14 @@ color: white;
 .bg-black{
     background: #000;
 }
+.gin{
+    font-size: 60px;
+    margin-left: 400px;
+    font-weight: bolder;
+    font-family: 'Roboto', sans-serif;
+    line-break: loose;
+    line-height: normal;
+}
 /*slider*/
 .carousel-item{
     height: 600px;
@@ -298,4 +306,12 @@ color: #fff;
     flex-direction: row;
     align-items: center;
     margin-left: 50%;
+}
+.gin{
+    font-size: 60px;
+    margin-left: 400px;
+    font-weight: bolder;
+    font-family: 'Roboto', sans-serif;
+    line-break: loose;
+    line-height: normal;
 }
