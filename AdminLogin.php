@@ -191,7 +191,7 @@ if (isset($_POST['loginButton'])) {
     <!-- Your preloader HTML -->
     <!-- <div class="preloader">Loading...</div> -->
     <div class="preloader flex-column justify-content-center align-items-center">
-        <img class="animation__wobble" src="Korina Claudia.png" alt="logo" height="260" width="260" style="border-radius: 50%" ;>
+        <img class="animation__wobble" src="preloader.png" alt="logo" height="260" width="260" style="border-radius: 50%" ;>
     </div>
     <div class="content-container">
     <div class="body-overlay"></div>

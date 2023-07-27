@@ -56,7 +56,7 @@ $conn->close();
 <body>
     <!-- loader Start -->
     <div class="preloader flex-column justify-content-center align-items-center">
-        <img class="animation__wobble" src="Korina Claudia.png" alt="Logo" height="60" width="60" style="border-radius: 50%;">
+        <img class="animation__wobble" src="preloader.png" alt="Logo" height="60" width="60" style="border-radius: 50%;">
     </div>
     <div class="content-container">
 
