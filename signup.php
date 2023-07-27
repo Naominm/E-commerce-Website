@@ -1,4 +1,6 @@
 <?php
+session_start(); // Add session_start() at the beginning to start the session
+
 $dbhost = "localhost";
 $dbuser = "root";
 $dbpass = "";
@@ -6,20 +8,47 @@ $dbname = "tracking-web";
 
 // Create connection
 $con = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
+
 // Check connection
-if (isset($_POST['confirmPassword'])) {
+if (!$con) {
+    die("Connection failed: " . mysqli_connect_error());
+}
+
+if (isset($_POST['loginButton'])) {
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+
+    $query = "SELECT * FROM signup WHERE email = '$email' AND password = '$password'";
+    $result = mysqli_query($con, $query);
+
+    if (mysqli_num_rows($result) == 1) {
+        $_SESSION['email'] = $email;
+        $_SESSION['loggedIn'] = true;
+        header("Location: page.php"); // Redirect to the page.html page
+        exit();
+    } else {
+        // Login failed, handle error or display a message
+        echo "Invalid email or password.";
+    }
+}
+
+if (isset($_POST['signupButton'])) { // Update the condition to check if the signup form is submitted
     $userName = $_POST['userName'];
     $email = $_POST['email'];
     $password = $_POST['password'];
     $confirmPassword = $_POST['confirmPassword'];
 
+    $query = "INSERT INTO signup (userName, email, password, confirmPassword) VALUES ('$userName', '$email', '$password', '$confirmPassword');";
 
-
-    $query = "INSERT INTO signup ( userName,email,password,confirmPassword) VALUES ( '$userName','$email',' $password',' $confirmPassword');";
-
-    mysqli_query($con, $query);
+    if (mysqli_query($con, $query)) {
+        // Signup successful, handle success or display a message
+        header("Location: login.php"); // Redirect to login page after successful signup
+        exit();
+    } else {
+        // Signup failed, handle error or display a message
+        echo "Error: " . mysqli_error($con);
+    }
 }
-
 ?>
 
 <!DOCTYPE html>
@@ -44,7 +73,8 @@ if (isset($_POST['confirmPassword'])) {
                     <img src="image/download.png" alt="a yellow login avatar" width="150px" height="150px">
                 </div>
                 <div class="card-body">
-                    <form method="POST">
+                  
+                <form id="signupForm" method="POST">
                         <div class="input-group mb-3">
                             <div class="input-group-prepend">
                                 <span class="input-group-text">
@@ -81,17 +111,17 @@ if (isset($_POST['confirmPassword'])) {
                         <p class="float-right text-white mt-3 py-2"><input type="checkbox">Accept the terms and conditions</p>
                         <button class="btn btn-success">submit</button>
                     </form>
-                   
+
                     <div class="text-center mt-3" id="flipText">
-    <p class="text-white">Already have an account? <a href="#" id="signupLink">Login</a></p>
-</div>
+                        <p class="text-white">Already have an account? <a href="#" id="signupLink">Login</a></p>
+                    </div>
 
                 </div>
             </div>
         </div>
     </div>
     <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
-    
+
 </body>
 
 </html>

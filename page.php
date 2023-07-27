@@ -52,17 +52,16 @@ if (isset($_POST['name'])) {
                 <a href="#services py-5 text-center" class="nav-link">services</a>
             </li> -->
                     <li class="nav-item">
-                        <a href="products.html" class="nav-link">Product</a>
+                        <a href="products.php" class="nav-link">Product</a>
                     </li>
                     <li class="nav-item">
                         <a href="about.html" class="nav-link">About</a>
                     </li>
                     <li class="nav-item">
-                        <a href="contact.html" class="nav-link">contact</a>
+                        <a href="contact.php" class="nav-link">contact</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link">
-                            <i class="fas fa-shopping-cart fa-2x"></i></a>
+                        <a href="#" class="nav-link"><i class="fas fa-shopping-cart fa-2x"></i></a>
                     </li>
                 </ul>
             </div>
@@ -134,9 +133,9 @@ if (isset($_POST['name'])) {
                 <!--single service-->
                 <div class="col-10 mx-auto col-md-6 col-lg-4 my-3">
                     <span class="service-icon">
-                        <i class="fa-solid fa-globe fa-2x"></i>
+                        <i class="fa-solid fa-globe fa-2x" style="color: blue;"></i>
                     </span>
-                    <h5 class="font-weight-bold text-uppercase">
+                    <h5 class="font-weight-bold text-uppercase" style="color: #fff;">
                         Countrywide Shipping</h5>
                     <p class="text-capitalize">Experience seamless shipping services across the country,
                         ensuring your hens arrive safely and on time.
@@ -148,9 +147,9 @@ if (isset($_POST['name'])) {
                 <!--single service-->
                 <div class="col-10 mx-auto col-md-6 col-lg-4 my-3">
                     <span class="service-icon">
-                        <i class="fas fa-stamp fa-2x"></i>
+                        <i class="fas fa-stamp fa-2x" style="color: yellow;"></i>
                     </span>
-                    <h5 class="font-weight-bold text-uppercase">
+                    <h5 class="font-weight-bold text-uppercase" style="color: #fff;">
                         certified by Kenchic</h5>
                     <p class="text-capitalize">We are an authorized partner of Kenchic, ensuring that our hens meet the highest standards of quality and health.
                         With rigorous inspections and testing, our hens are certified to be genuine and top-notch poultry.
@@ -160,9 +159,9 @@ if (isset($_POST['name'])) {
                 <!--single service-->
                 <div class="col-10 mx-auto col-md-6 col-lg-4 my-3">
                     <span class="service-icon">
-                        <i class="fas fa-file-invoice-dollar fa-2x"></i>
+                        <i class="fas fa-file-invoice-dollar fa-2x" style="color: green;"></i>
                     </span>
-                    <h5 class="font-weight-bold text-uppercase">
+                    <h5 class="font-weight-bold text-uppercase" style="color: #fff;">
                         30 days money back</h5>
                     <p class="text-capitalize">We offer a 30-day money back guarantee on our hens.
                         If you're not satisfied with your purchase within 30 days, contact us for a refund.
@@ -391,9 +390,9 @@ if (isset($_POST['name'])) {
                 <div class=" col-lg-5 text-center">
                     <img src="./image/image2.jpg" alt="" width="450" height="150" class="img-fluid watch-img">
                 </div>
-                <div class="col-lg-7 text-lg-right text-center text-color about-text">
+                <div class="col-lg-7 text-lg-right text-center text-color about-text" style="color: #fff;">
                     <h1>About Company</h1>
-                    <p class="text"> Welcome to our world of exceptional hens.
+                    <p class="text" style="color: #000;"> Welcome to our world of exceptional hens.
                         We take great pride in offering you the finest selection of poultry,
                         raised with care and passion. Our commitment to quality ensures that each
                         hen meets the highest standards of health and well-being.

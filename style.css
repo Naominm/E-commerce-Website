@@ -1,7 +1,11 @@
 body{
     font-family: 'Roboto', sans-serif;
 color: white;
+background-color: #fafbfd;
 
+}
+h1{
+    color: #fff;
 }
 .navbar .nav-link{
     font-size: 14px;
@@ -104,7 +108,7 @@ h5{
 /*end of service section*/
 /*product section*/
 #products{
-    background-color: black;
+    background-color: #353B48;
 
 }
 .product-title{
@@ -210,7 +214,7 @@ animation-duration: 3s;
 /*end of about section*/
 /*best seller*/
 .seller{
-    background-color: #000;
+    background-color: #e6e8ec;
     color: #fff;
     margin-top: 30px;
 
@@ -285,7 +289,7 @@ animation-duration: 3s;
 /*end of best seller
 /*foote*/
 .footer{
-background:#000;
+    background-color: #353B48;
 color: #fff;
 }
 .fab{
@@ -314,4 +318,8 @@ color: #fff;
     font-family: 'Roboto', sans-serif;
     line-break: loose;
     line-height: normal;
+}
+.arrow-text{
+    font-size: 50px;
+    font-weight: bold;
 }

@@ -5,10 +5,14 @@ body{
     min-height: 1000%;
     opacity: 0.8;
 }
-i{
-    height: 40px;
+.i{
+    height: 10px;
     margin-top: 10px;
 }
 img{
     border-radius: 100px;
+}
+.card{
+    height: 150px;
+    width: 50px;
 }
