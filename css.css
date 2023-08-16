@@ -653,6 +653,16 @@ display: inline-block;
 .steamline .sl-item p{
     font-size: 14px;
 }
+/* CSS */
+.occupy-full {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
  /* Custom CSS to make icons fill the card header */
  .card-header .icon {
     font-size: 2.5rem; /* Adjust the font-size as needed */
@@ -913,8 +923,20 @@ padding-top: 6px;
     z-index: 15;
 }
 /* CSS for the menu bar */
+
 .menu-bar {
-  display: none;
+    cursor: pointer;
+    padding: 15px;
+    background-color: #555;
+    color: #fff;
+}
+
+.menu-bar:hover {
+    background-color: #444;
+}
+
+.menu-bar .material-icons {
+    font-size: 24px;
 }
 
 /*main content navbardesign -end*/
@@ -1022,10 +1044,55 @@ padding-top: 6px;
     }
 
 }
+/* Hide the menu bar on larger screens */
 @media (min-width: 768px) {
     .menu-bar {
-        display: none; /* Hide the menu bar on larger screens */
+        display: none;
+    }
+    .breadcrumb-date {
+        margin-top: 0px;
     }
 }
+  
+
+/* Apply styles for screens from 577px to 1199px width (medium devices) */
+@media (min-width: 577px) and (max-width: 1199px) {
+    .breadcrumb-date {
+        margin-top: 10px;
+    }
+    .card .card-stats{
+        margin-top: 10px; 
+    }
+    .form-group label {
+        margin-top: 5px;
+        margin-left: 0px;
+        font-size: 15px; /* Add padding to the top of the label */
+    }
+    
+}
+
+/* Apply styles for screens up to 576px width (small devices) */
+@media (max-width: 576px) {
+    .breadcrumb-date {
+        margin-top: 0px;
+    }
+    
+    .d-md-none {
+        display: none;
+    }
+    .card .card-stats{
+        margin-top: 10px; 
+    }
+    .form-group label {
+        margin-top: 5px; 
+        margin-left: 0px;
+        font-size: 15px;/* Add padding to the top of the label */
+    }
+    
+}
+
+
+
+
 /*media query ends*/
 /*footer design end*/
