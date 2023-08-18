@@ -237,7 +237,7 @@ $conn->close();
                     <div class="xd-topbar">
                         <div class="row mx-3">
                             <div class="col-2 col-md-1 col-lg-1 order-2n order-md-1 align-self-center">
-                                <div class="xp-menubar">
+                                <div class="xp-menubar d-none d-md-block">
                                     <span class="material-icons text-white">signal_cellular_alt</span>
                                 </div>
                             </div>
